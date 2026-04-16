@@ -34,4 +34,10 @@ class DocenteController extends Controller
             return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
         }
     }
+
+    public function getGrupos()
+    {
+        $grupos = DB::table('Grupos')->select('Id_grupo', 'Nombre_grupo')->get();
+        return response()->json(['success' => true, 'data' => $grupos]);
+    }
 }
