@@ -48,7 +48,7 @@ function cargarAlumnos(idGrupo) {
                         <td>${alumno.Calificacion || '---'}</td>
                         <td>
                             <button class="btn" onclick="abrirModal(${alumno.Id_inscripcion}, ${alumno.Calificacion || 0})">
-                                📝 Calificar
+                                 Calificar
                             </button>
                         </td>
                     </tr>`;
