@@ -35,9 +35,17 @@ class DocenteController extends Controller
         }
     }
 
-    public function getGrupos()
+    public function getGrupos($id_docente)
     {
-        $grupos = DB::table('Grupos')->select('Id_grupo', 'Nombre_grupo')->get();
-        return response()->json(['success' => true, 'data' => $grupos]);
+        try {
+            $grupos = DB::table('Grupos')
+                ->where('Id_docente', $id_docente)
+                ->select('Id_grupo', 'Clave_grupo')
+                ->get();
+
+            return response()->json(['success' => true, 'data' => $grupos]);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
+        }
     }
 }

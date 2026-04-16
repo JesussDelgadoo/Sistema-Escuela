@@ -8,47 +8,68 @@
     <link rel="stylesheet" href="css/usuarios.css">
 </head>
 <body>
-<div class="layout">
-    <aside class="sidebar">
-        <div class="brand">
-            <div class="brand__mark">SE</div>
-            <div>
-                <div class="brand__name">Sistema Escuela</div>
-                <div class="brand__tag">Panel Docente</div>
-            </div>
-        </div>
+<div class="layout"> <aside class="sidebar"> <div class="brand">
+    <div class="brand__mark">SE</div>
+    <div>
+        <div class="brand__name">Sistema Escuela</div>
+        <div class="brand__tag">Panel Docente</div>
+    </div>
+</div>
 
-        <nav class="menu">
-            <a class="menu__item" href="dashboard-docente.html">Gestión Alumnos</a>
-        </nav>
+    <nav class="menu"> <a class="menu__item" href="dashboard-docente.html">Gestión Alumnos</a>
+    </nav>
 
-        <div class="sidebar__footer">
-            <button id="logoutBtn" class="btn btn-danger" type="button" onclick="localStorage.clear(); window.location.href='login.html'">
-                Cerrar sesión
-            </button>
-        </div>
-    </aside>
+    <div class="sidebar__footer"> <button class="btn btn-danger" type="button" onclick="localStorage.clear(); window.location.href='login.html'">
+        Cerrar sesión
+    </button>
+    </div>
+</aside>
 
     <main class="main">
-        <header class="main__header">
-            <h1>Gestión de Calificaciones</h1>
-            <p class="muted">Lista de alumnos inscritos en tu grupo asignado.</p>
+        <header class="main__header" style="display: flex; justify-content: space-between; align-items: flex-end;">
+            <div>
+                <h1>Gestión de Calificaciones</h1>
+                <p class="muted">Visualiza y edita las notas de tus grupos.</p>
+            </div>
+
+            <div class="field" style="margin: 0; min-width: 220px;">
+                <label class="field__label">Seleccionar Grupo:</label>
+                <select id="select-grupos" class="field__input">
+                    <option value="">Cargando...</option>
+                </select>
+            </div>
         </header>
 
-        <section class="table-wrap" style="margin-top: 20px;">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre del Alumno</th>
-                    <th>Calificación</th>
-                    <th>Acciones</th>
-                </tr>
-                </thead>
+        <section class="table-wrap" style="margin-top: 24px;">
+            <table class="table"> <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre del Alumno</th>
+                <th>Calificación</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
                 <tbody id="tabla-alumnos"></tbody>
             </table>
         </section>
     </main>
+</div>
+
+<div id="modalCalificar" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); place-items:center; z-index:1000;">
+    <div class="card" style="max-width:400px; width:90%; background:var(--surface);">
+        <div class="form">
+            <h3 class="brand__name">Asignar Nota</h3>
+            <input type="hidden" id="input-inscripcion">
+            <div class="field">
+                <label class="field__label">Nueva Calificación (0-100)</label>
+                <input type="number" id="input-nota" class="field__input">
+            </div>
+            <div style="display:flex; gap:10px; margin-top:20px;">
+                <button class="btn btn--primary" onclick="enviarCalificacion()" style="flex:1">Guardar</button>
+                <button class="btn" onclick="cerrarModal()" style="flex:1">Cerrar</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="js/docente.js"></script>

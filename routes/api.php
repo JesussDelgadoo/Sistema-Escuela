@@ -11,6 +11,6 @@ Route::post('/register', [AuthController::class, 'register']);
 
 Route::get('/docente/grupo/{id}', [DocenteController::class, 'getAlumnosGrupo']);
 Route::post('/docente/calificar', [DocenteController::class, 'guardarCalificacion']);
-Route::get('/docente/grupos', [DocenteController::class, 'getGrupos']);
+Route::get('/docente/{id}/grupos', [DocenteController::class, 'getGrupos']);
 
 Route::get('/alumnos/{id}/desempeno', [AlumnoController::class, 'getDesempeno']);
