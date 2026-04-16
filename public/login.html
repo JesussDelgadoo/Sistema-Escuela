@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Iniciar Sesión | Sistema Escuela</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<main class="page">
+    <section class="card">
+        <header class="card__header">
+            <div class="brand">
+                <div class="brand__mark">SE</div>
+                <div class="brand__text">
+                    <div class="brand__name">Sistema Escuela</div>
+                    <div class="brand__tag">Acceso al sistema escolar</div>
+                </div>
+            </div>
+        </header>
+
+        <form id="loginForm" class="form" novalidate>
+            <div class="field">
+                <label for="email" class="field__label">Correo Electrónico</label>
+                <input id="email" class="field__input" type="email" placeholder="nombre@ejemplo.com" required>
+            </div>
+
+            <div class="field">
+                <label for="contrasena" class="field__label">Contraseña</label>
+                <input id="contrasena" class="field__input" type="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn btn--primary">Entrar</button>
+
+            <p id="msg" class="msg" style="margin-top: 10px; text-align: center; font-size: 13px;"></p>
+        </form>
+
+        <footer class="card__footer">
+            <small>©<span id="year"></span> Sistema Escuela</small>
+            <div style="margin-top: 10px;">
+                <a href="register.html" style="color: var(--brand-500); text-decoration: none; font-size: 12px;">¿No tienes cuenta? Regístrate aquí</a>
+            </div>
+        </footer>
+    </section>
+</main>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script src="js/login.js"></script>
+</body>
+</html>

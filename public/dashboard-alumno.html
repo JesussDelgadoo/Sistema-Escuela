@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Alumno | Sistema Escuela</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <header class="sidebar__header">
+            <div class="brand">
+                <div class="brand__mark">SE</div>
+                <div class="brand__text">
+                    <div class="brand__name">Sistema Escuela</div>
+                </div>
+            </div>
+        </header>
+        <nav class="nav">
+            <a href="#" class="nav__link nav__link--active">Inicio</a>
+            <a href="login.html" class="nav__link" onclick="localStorage.clear()" style="margin-top: auto;">🚪 Salir</a>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <header class="main__header">
+            <h1 id="txt-saludo">Cargando...</h1>
+            <p class="muted">Aquí puedes consultar tu promedio y estatus académico actual.</p>
+        </header>
+
+        <div class="cards" id="contenedor-kpis">
+            <div class="kpi">
+                <div class="kpi__title">PROMEDIO</div>
+                <div class="kpi__value">--</div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="js/alumno.js"></script>
+</body>
+</html>

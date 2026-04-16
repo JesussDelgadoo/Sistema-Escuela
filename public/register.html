@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Registro | Sistema Escuela</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<main class="page">
+    <section class="card">
+        <header class="card__header">
+            <div class="brand">
+                <div class="brand__mark">SE</div>
+                <div class="brand__text">
+                    <div class="brand__name">Sistema Escuela</div>
+                    <div class="brand__tag">Crea tu cuenta escolar</div>
+                </div>
+            </div>
+        </header>
+
+        <form id="registerForm" class="form" novalidate>
+            <div class="field">
+                <label class="field__label">Correo Electrónico</label>
+                <input id="email" class="field__input" type="email" placeholder="nombre@ejemplo.com" required>
+            </div>
+            <div class="field">
+                <label class="field__label">Contraseña</label>
+                <input id="pass" class="field__input" type="password" placeholder="••••••••" required>
+            </div>
+            <div class="field">
+                <label class="field__label">Tipo de Usuario</label>
+                <select id="rol" class="field__input">
+                    <option value="Alumno">Alumno</option>
+                    <option value="Docente">Docente</option>
+                </select>
+            </div>
+            <div class="field">
+                <label class="field__label">ID de Referencia (Tu ID en la BD)</label>
+                <input id="ref" class="field__input" type="number" placeholder="Ej. 1" required>
+            </div>
+
+            <button type="submit" class="btn btn--primary">Registrarme</button>
+            <p id="msg" class="msg" style="margin-top: 10px; text-align: center;"></p>
+        </form>
+
+        <footer class="card__footer">
+            <a href="login.html" style="color: var(--brand-500); text-decoration: none; font-size: 12px;">¿Ya tienes cuenta? Inicia sesión</a>
+        </footer>
+    </section>
+</main>
+<script src="js/register.js"></script>
+</body>
+</html>
